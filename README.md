@@ -11,3 +11,11 @@ used custom css and html for this design
 
 #for any queries -> contact
 dugginenigowthami@gmail.com
+
+Installing in local:
+
+use git commands:
+
+git clone https://github.com/Gowthamiiiii/Dropdown_Component
+
+and then run the html file.
