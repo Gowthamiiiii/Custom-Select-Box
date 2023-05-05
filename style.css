@@ -1,0 +1,192 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  margin-top: 100px;
+  padding: 32px;
+}
+
+.box_selected {
+  display: flex;
+  width: 400px;
+  flex-direction: column;
+}
+
+.box_selected .options-wrapper {
+  background: #f5f6fa;
+  color: #2f3640;
+  max-height: 0;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.4s;
+  border-radius: 8px;
+  overflow: hidden;
+  order: 1;
+}
+
+.box_selected .options-wrapper.active+.selected::after {
+  transform: rotateX(180deg);
+  top: -6px;
+}
+
+.box_selected .options-wrapper::-webkit-scrollbar {
+  width: 4px;
+  background: grey;
+  border-radius: 0 2px 2px 0;
+}
+
+.box_selected .options-wrapper::-webkit-scrollbar-thumb {
+  background: lightgray;
+  border-radius: 0 2px px 0;
+}
+
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: #f7f6ff;
+}
+
+h2 {
+  margin: 16px;
+}
+
+.selected {
+  background: #f5f6fa;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  color: #2f3640;
+  position: relative;
+
+  order: 0;
+}
+
+.selected::after {
+  content: "";
+  background: url("img/arrow-down.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  position: absolute;
+  height: 100%;
+  width: 32px;
+  right: 10px;
+  top: 5px;
+
+  transition: all 0.4s;
+  filter: invert(1);
+}
+
+.box_selected .options-wrapper.active {
+  max-height: 303px;
+  opacity: 1;
+  overflow-y: scroll;
+  border: 1px solid;
+  
+}
+
+.selected {
+  border: 1px solid;
+}
+
+.box_selected .option,
+.selected {
+  padding: 12px 24px;
+  cursor: pointer;
+
+}
+
+.box_selected .option:hover {
+  background: rgb(154, 213, 237);
+}
+
+.box_selected label {
+  cursor: pointer;
+}
+
+.box_selected .option .radio {
+  display: none;
+}
+/* The modal wrapper */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black background with opacity */
+}
+
+/* Modal content */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  /* Could be more or less, depending on screen size */
+  text-align: center;
+    font-size: 22px;
+    width: 600px;
+    height: 300px;
+    /* align-items: center; */
+    padding-top: 3%;
+}
+
+/* Close button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  font-size: 22px;
+}
+.modal-content {
+  background-color: #f8f8f8;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 24px;
+  border-radius: 8px;
+}
+.modal {
+  animation: fade-in 0.3s ease-in-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
